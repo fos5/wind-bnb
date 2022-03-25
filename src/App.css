@@ -1,38 +1,119 @@
-.App {
-  text-align: center;
+:root {
+  --primary-color: #eb5757;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  width: 90%;
+  margin: 50px auto;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.nav {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+}
+.logo > img {
+  height: 20px;
+}
+/* Search area */
+.searchBar {
+  display: flex;
+  background: #ffffff;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  width: 40%;
+}
+/* .searchBar:hover {
+  border: 2px solid var(--primary-color);
+} */
+.searchBar > input[type="search"] {
+  border: none;
+  outline: none;
+  border-right: 0.5px solid rgb(209, 206, 206);
+  padding: 15px;
+}
+.searchIcon {
+  padding: 15px;
+  color: var(--primary-color);
+}
+::placeholder {
+  color: #ccc;
+}
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+/* Image Cards */
+.image-card {
+  /* border: 1px solid red; */
+  width: 330px;
+  margin-top: 40px;
+}
+#imageCard {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 32px;
 }
 
-.App-link {
-  color: #61dafb;
+.image-card > .card > img {
+  width: 330px;
+  height: 269px;
+  border-radius: 24px;
+  margin-bottom: 15px;
+}
+.caption {
+  display: flex;
+  justify-content: space-between;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #828282;
+}
+/* superHost */
+.superHost {
+  width: 100px;
+  border: 1px solid #4f4f4f;
+  box-sizing: border-box;
+  border-radius: 12px;
+  text-align: center;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #4f4f4f;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Mobile View */
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .logo {
+    margin: 15px;
   }
-  to {
-    transform: rotate(360deg);
+  .nav {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+  }
+  .searchBar {
+    width: 100%;
+  }
+  .searchBar > input[type="search"] {
+    width: 50%;
+  }
+  #imageCard {
+    display: grid;
+    grid-template-columns: auto;
   }
 }
