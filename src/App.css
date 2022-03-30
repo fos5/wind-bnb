@@ -11,10 +11,22 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 .container {
-  width: 90%;
+  width: 95%;
   margin: 50px auto;
   box-sizing: border-box;
   overflow: hidden;
+}
+.block {
+  display: block;
+}
+.bold {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 10px;
+  margin-bottom: 5px;
+}
+.faint {
+  color: #bdbdbd;
 }
 .nav {
   display: flex;
@@ -26,19 +38,34 @@ body {
 /* Search area */
 .searchBar {
   display: flex;
+  justify-content: space-around;
   background: #ffffff;
   box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
   width: 40%;
 }
-/* .searchBar:hover {
-  border: 2px solid var(--primary-color);
-} */
-.searchBar > input[type="search"] {
+
+.btn-search {
   border: none;
   outline: none;
-  border-right: 0.5px solid rgb(209, 206, 206);
   padding: 15px;
+  background: none;
+  font-family: Montserrat;
+  cursor: pointer;
+}
+.btn-search:hover {
+  color: #eb5757;
+}
+.searchBar button:nth-of-type(1) {
+  font-family: Montserrat;
+  text-align: center;
+  flex-grow: 2;
+  border-right: 0.5px solid rgb(209, 206, 206);
+}
+.searchBar button:nth-of-type(2) {
+  color: #bdbdbd;
+  font-family: Mulish;
+  border-right: 0.5px solid rgb(209, 206, 206);
 }
 .searchIcon {
   padding: 15px;
@@ -47,6 +74,93 @@ body {
 ::placeholder {
   color: #ccc;
 }
+/* Hidden class */
+
+.hidden-class {
+  width: 95%;
+  height: 50vh;
+  position: absolute;
+  background-color: #ffffff;
+}
+.hidden-class-container {
+  padding: 20px 20px;
+}
+/* Close button for hidden class */
+.input-bar {
+  height: 55px;
+  background: #ffffff;
+  margin-top: 20px;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 0.5fr;
+}
+
+.btn-close {
+  font-size: 19px;
+  float: right;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: red;
+  padding: 5px;
+}
+.input-bar button {
+  /* width: 40%; */
+  background-color: transparent;
+  border-radius: 20px;
+  border: 0.5px solid #ccc;
+  text-align: start;
+  padding-left: 30px;
+  font-family: Mulish;
+}
+.input-bar button:focus {
+  border: 2px solid #000;
+}
+
+.input-bar button:last-child {
+  background-color: var(--primary-color);
+  color: #fff;
+  outline: none;
+  border: #fff;
+  width: 40%;
+  padding: 0;
+  margin-left: 60px;
+  text-align: center;
+  gap: 10px;
+}
+.input-bar button:last-child:focus {
+  border: 2px ridge var(--primary-color);
+}
+.cities button {
+  font: mulish;
+  display: block;
+  border: none;
+  background-color: #fff;
+  font-size: 16px;
+  margin: 20px;
+  padding: 5px;
+}
+.cities button:focus,
+.cities button:hover {
+  border-bottom: 1px solid black;
+}
+.grid-in-hidden-class {
+  display: grid;
+  grid-template-columns: 2fr 6fr;
+  gap: 35%;
+}
+.ages {
+  font: mulish;
+  font-size: 16px;
+  display: grid;
+  margin: 20px;
+  gap: 20px;
+
+  /* padding-bottom: 15px; */
+}
+/* End of Hidden class */
+
 /* Header */
 .header {
   display: flex;
@@ -72,15 +186,21 @@ body {
   height: 269px;
   border-radius: 24px;
   margin-bottom: 15px;
+  object-fit: cover;
 }
 .caption {
   display: flex;
   justify-content: space-between;
+  font-family: Montserrat;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
   color: #828282;
+}
+.caption-title {
+  font-family: Montserrat;
+  font-weight: 500;
 }
 /* superHost */
 .superHost {
@@ -110,7 +230,7 @@ body {
     width: 100%;
   }
   .searchBar > input[type="search"] {
-    width: 50%;
+    width: 100%;
   }
   #imageCard {
     display: grid;

@@ -10,14 +10,21 @@ const Stay = ({ stay }) => {
           {stay.superHost && <span className="superHost">Super Host</span>}
           <span className="rooms">
             {stay.type}
-            {stay.beds !== null && <span> {stay.beds} bed(s)</span>}
+
+            {stay.beds === 1 ? (
+              <span> {stay.beds} bed</span>
+            ) : stay.beds !== null ? (
+              <span> {stay.beds} beds</span>
+            ) : (
+              ""
+            )}
           </span>
           <span>
             <FaStar color="#eb5757" />
             {stay.rating}
           </span>
         </div>
-        <p>{stay.title}</p>
+        <p className="caption-title">{stay.title}</p>
       </div>
     </div>
   );
